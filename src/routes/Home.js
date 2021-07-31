@@ -11,14 +11,14 @@ class Home extends React.Component {
 
   // 비동기 실행 함수 - 영화 데이터
   getMovies = async () => {
-    // const {
-    //   data: {
-    //     data: { movies },
-    //   },
-    // } = await axios.get(
-    //   "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
-    // ); // movies = data.data.movies
-    const movies = myMovieData;
+    const {
+      data: {
+        data: { movies },
+      },
+    } = await axios.get(
+      "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
+    ); // movies = data.data.movies
+    // const movies = myMovieData;
     this.setState({ movies, isLoading: false }); // == movies: movies, isLoading: false
   };
 
